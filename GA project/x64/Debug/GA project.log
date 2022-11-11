@@ -1,0 +1,6 @@
+﻿  genome.cpp
+C:\Users\fairs\source\repos\GA project\genome.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  main.cpp
+C:\Users\fairs\source\repos\GA project\genome.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+  GA project.vcxproj -> C:\Users\fairs\source\repos\GA project\x64\Debug\GA project.exe
