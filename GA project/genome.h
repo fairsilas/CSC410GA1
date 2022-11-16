@@ -56,7 +56,7 @@ public:
         random = min + random * (max - min);
         if (random < mRate)
         {
-            int redValue = (rand() % 226) + 1;
+            int redValue = (rand() % 256) + 1;
             set_red(index, redValue);
         }
         //mutate green
@@ -64,7 +64,7 @@ public:
         random = min + random * (max - min);
         if (random < mRate)
         {
-            int greenValue = (rand() % 226) + 1;
+            int greenValue = (rand() % 256) + 1;
             set_green(index, greenValue);
         }
         //mutate blue
@@ -72,7 +72,7 @@ public:
         random = min + random * (max - min);
         if (random < mRate)
         {
-            int blueValue = (rand() % 226) + 1;
+            int blueValue = (rand() % 256) + 1;
             set_blue(index, blueValue);
         }
     }
@@ -86,9 +86,9 @@ public:
 
     // calculate gene fitness 
     double calculate_gene_fitness(int index, Pixel targetPixel) {
-        float percent_red_error = abs(get_red(index) - targetPixel.red)/ double(226);
-        double percent_green_error = abs(get_green(index) - targetPixel.green) / double(226);
-        double percent_blue_error = abs(get_blue(index) - targetPixel.blue) / double(226);
+        float percent_red_error = abs(get_red(index) - targetPixel.red)/ double(256);
+        double percent_green_error = abs(get_green(index) - targetPixel.green) / double(256);
+        double percent_blue_error = abs(get_blue(index) - targetPixel.blue) / double(256);
         double gene_fitness = (percent_red_error + percent_green_error + percent_blue_error) / double(3);
         return gene_fitness;
     }
@@ -129,9 +129,9 @@ public:
         for (int i = 0; i < nGenes; i++)
         {
 
-            int redValue = (rand() % 226) + 1;
-            int greenValue = (rand() % 226) + 1;
-            int blueValue = (rand() % 226) + 1;
+            int redValue = (rand() % 256) + 1;
+            int greenValue = (rand() % 256) + 1;
+            int blueValue = (rand() % 256) + 1;
 
             set_red(i, redValue);
             set_green(i, greenValue);
