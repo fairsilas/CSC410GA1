@@ -1,5 +1,3 @@
-// what the class does
-
 #include <cstdlib>
 #include <random>
 #include <iostream>
