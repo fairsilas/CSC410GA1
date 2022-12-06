@@ -9,12 +9,12 @@
 
 using namespace std;
 
+
 struct Pixel {
     int red;
     int blue;
     int green;
 };
-
 
 
 class genome {
@@ -91,7 +91,7 @@ public:
 
     // calculate gene fitness 
     double calculate_gene_fitness(int index, Pixel targetPixel) {
-        float percent_red_error = abs(get_red(index) - targetPixel.red)/ double(256);
+        double percent_red_error = abs(get_red(index) - targetPixel.red)/ double(256);
         double percent_green_error = abs(get_green(index) - targetPixel.green) / double(256);
         double percent_blue_error = abs(get_blue(index) - targetPixel.blue) / double(256);
         double gene_fitness = (percent_red_error + percent_green_error + percent_blue_error) / double(3);
