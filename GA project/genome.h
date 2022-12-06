@@ -1,6 +1,11 @@
+// what the class does
+
 #include <cstdlib>
 #include <random>
 #include <iostream>
+#ifndef GENOME_H
+#define GENOME_H
+#include <time.h>
 
 using namespace std;
 
@@ -9,6 +14,8 @@ struct Pixel {
     int blue;
     int green;
 };
+
+
 
 class genome {
 public:
@@ -92,7 +99,8 @@ public:
     }
 
     //calculate overall fitness
-    double calculate_overall_fitness(Pixel target, int nPixels) {
+    double calculate_overall_fitness(Pixel target, int nPixels) 
+    {
         double fitness_total = 0;
         for (int i = 0; i < nPixels; i++) {
             fitness_total += calculate_gene_fitness(i, target);
@@ -102,18 +110,26 @@ public:
     }
 
     //set pixel
-    void set_pixel(int index, Pixel newPixel) {
+    void set_pixel(int index, Pixel newPixel) 
+    {
         if ((index <= nGenes) && (index >= 0)) {
             genes[index] = newPixel;
         }
         else {
-            cout << "Out of range line 108-110 is bad";
-        }
-        
-        
+            cout << "Pixel out of range! set_pixel in genome.h";
+        } 
+    }
+    //return number of genes
+    Pixel get_pixel(int index) {
+        return genes[index];
+    }
+
+    //return number of genes
+    int get_nGenes() {
+        return nGenes;
     }
     
-    void deallocate()
+    void deallocate() 
     {
         if (genes == NULL)
         {
@@ -164,10 +180,12 @@ public:
     //print out all the genes color values
     void print() 
     {
+        cout << "(";
         for (int i = 0; i < nGenes; i++)
         {
-            cout << "gene " << i << "(" << get_red(i) << ", " << get_green(i) << ", " << get_blue(i) << ")\n";
+            cout <<"(" << get_red(i) << ", " << get_green(i) << ", " << get_blue(i) << ") ";
         }
+        cout << ")\n";
     }
 
     Pixel* genes;
@@ -177,3 +195,4 @@ private:
 
 };
 
+#endif
