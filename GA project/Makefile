@@ -1,5 +1,8 @@
-program: genome.o main.o
+program: genome.o main.o population.o
 	g++ -o program genome.o main.o
+	
+population.o: population.h population.cpp
+	g++ -c population.cpp
 
 genome.o: genome.h genome.cpp
 	g++ -c genome.cpp
