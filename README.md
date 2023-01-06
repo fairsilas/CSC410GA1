@@ -1,7 +1,7 @@
 # CSC410GA1
 The repo for GA assignment
 
-This genetic algorithm assignment takes lists of genomes and crosses them over using a simple genetic algorithm
+This genetic algorithm assignment takes lists of pixels with RGB values to make genomes and then crosses them over using a simple genetic algorithm. 
 
 
 
